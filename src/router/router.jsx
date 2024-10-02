@@ -4,6 +4,7 @@ import LayoutPublic from "../layout/LayoutPublic";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Register from "../pages/Register";
 import Resources from "../pages/Resources";
+import Community from "../pages/Comunity";
 
 const router = createBrowserRouter([
   {
@@ -34,11 +35,11 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>
-      },
+      }, */
       {
         path: "/community",
         element: <Community/>
-      } */
+      }
     ]
   }  
 ]);
