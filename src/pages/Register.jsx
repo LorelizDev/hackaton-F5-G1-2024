@@ -16,7 +16,7 @@ const Register = () => {
 
   const navigate = useNavigate();
   
-  const onSubmit = async () =>{
+  const onSubmit = async (data) =>{
     try {
           const response = await  registerUser(data);
         console.log(response)
