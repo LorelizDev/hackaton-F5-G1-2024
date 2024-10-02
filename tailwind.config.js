@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        light: '#E1E7EE',
+        dark: '#375172',
+        medium: '#6864AD',
+        contrast: '#85D8C8'
+      },
+      fontFamily: {
+        mainFont: ['Raleway']
+      },
+    },
   },
   plugins: [],
 }
