@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-/* import { registerUser } from '../../../services/authService'
- */import { useNavigate } from 'react-router-dom'
+import { registerUser } from '../services/userServices'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   const navigate = useNavigate();
@@ -10,17 +10,17 @@ const Register = () => {
   
   const onSubmit = async (data) =>{
     try {
-/*         const response = await registerUser(data);
+          const response = await  registerUser(data);
         console.log(response)
-        const {token, rol} = response.sesiondata;
+       /* const {token, rol} = response.sesiondata;
         localStorage.setItem('token', token);
-        localStorage.setItem('rol', rol);
- */        alert('Usuario creado correctamente ')
+        localStorage.setItem('rol', rol); */
+        alert('Usuario creado correctamente ')
         navigate('/');
     } catch (error) {
         console.error(error)
-    }
-  }
+    } 
+} 
 
   return (
     <div className='formulary_section'>
@@ -40,11 +40,10 @@ const Register = () => {
                 <input name='gender' {...register('gender', {required:true})} className="register_username" placeholder="Sexo" required/>
                 <input type="email" name='email' {...register('email', {required:true})} className="register_email" placeholder="Email" required/>
                 <input type="password" name='password' {...register('password', {required:true})} className="register_password" placeholder="Contraseña" required/>
-                <button type="submit">Register</button>
+                <button type="submit">Registrar</button>
             </form>
         </div>
     </div>
   )
 }
-
 export default Register
