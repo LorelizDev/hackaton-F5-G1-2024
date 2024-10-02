@@ -1,14 +1,22 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 /* import { registerUser } from '../../../services/authService'
  */import { useNavigate } from 'react-router-dom'
+import FormTemplate from '../components/FormTemplate';
 
 const Register = () => {
-  const navigate = useNavigate();
+  const fields = [
+    { name: "name", type: "text",  placeholder: "Nombre", validation: { required: "Tu nombre es requerido" } },
+    { name: "lastname", type: "text",  placeholder: "Apellido", validation: { required: "Tu apellido es requerido" } },
+    { name: "email", type: "email",  placeholder: "Correo electrónico", validation: { required: "Tu correo electrónico es requerido" } },
+    { name: "phone", type: "text",  placeholder: "Teléfono", validation: { required: "Tu número de teléfono es requerido" } },
+    { name: "profession", type: "text",  placeholder: "Profesión", validation: { required: "Tu profesión es requerida" } },
+    { name: "gender", type: "text",  placeholder: "Género", validation: { required: "Tu género es requerido" } },
+    { name: "password", type: "password",  placeholder: "Contraseña", validation: { required: "Tu contraseña es requerida" } },
+  ];
 
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const navigate = useNavigate();
   
-  const onSubmit = async (data) =>{
+  const onSubmit = async () =>{
     try {
 /*         const response = await registerUser(data);
         console.log(response)
@@ -23,26 +31,8 @@ const Register = () => {
   }
 
   return (
-    <div className='formulary_section'>
-        <div className="formulary">
-
-            <div className="formulary_text">
-                <h3 className="registrer_option">Crea una cuenta</h3>
-                <button onClick={() => navigate(`/login`)} className='registrer_option_changer'>Ya tengo una cuenta</button>
-            </div>
-
-
-            <form className="register" onSubmit={handleSubmit(onSubmit)}>
-                <input name='name' {...register('name', {required:true})} className="register_username" placeholder="Nombre" required/>
-                <input name='lastname' {...register('lastname', {required:true})} className="register_username" placeholder="Apellido" required/>
-                <input name='phone' {...register('phone', {required:true})} className="register_username" placeholder="Teléfono" required/>  
-                <input name='profession' {...register('profession', {required:true})} className="register_username" placeholder="Profesión" required/>
-                <input name='gender' {...register('gender', {required:true})} className="register_username" placeholder="Sexo" required/>
-                <input type="email" name='email' {...register('email', {required:true})} className="register_email" placeholder="Email" required/>
-                <input type="password" name='password' {...register('password', {required:true})} className="register_password" placeholder="Contraseña" required/>
-                <button type="submit">Register</button>
-            </form>
-        </div>
+    <div className='formulary_section my-12'>
+      <FormTemplate title="Crea una cuenta" fields={fields} onSubmit={onSubmit} submitText="Regístrate" />
     </div>
   )
 }
