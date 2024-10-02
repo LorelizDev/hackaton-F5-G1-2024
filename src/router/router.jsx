@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import LayoutPublic from "../layout/LayoutPublic";
 import ErrorBoundary from "../components/ErrorBoundary";
+import Register from "../pages/Register";
+import Resources from "../pages/Resources";
 
 const router = createBrowserRouter([
   {
@@ -13,10 +15,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
+     /*  {
         path: "/login",
         element: <Login/>,
-      },
+      }, */
       {
         path: "/register",
         element: <Register/>,
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
         path: "/resources",
         element: <Resources/>,
       },
-      {
+      /* {
         path: "/saviours",
         element: <Saviour/>,
       },
@@ -36,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: "/community",
         element: <Community/>
-      }
+      } */
     ]
   }  
 ]);
