@@ -1,6 +1,6 @@
 import React from 'react'
-/* import { registerUser } from '../../../services/authService'
- */import { useNavigate } from 'react-router-dom'
+import { registerUser } from '../services/userServices'
+import { useNavigate } from 'react-router-dom'
 import FormTemplate from '../components/FormTemplate';
 
 const Register = () => {
@@ -18,17 +18,17 @@ const Register = () => {
   
   const onSubmit = async () =>{
     try {
-/*         const response = await registerUser(data);
+          const response = await  registerUser(data);
         console.log(response)
-        const {token, rol} = response.sesiondata;
+       /* const {token, rol} = response.sesiondata;
         localStorage.setItem('token', token);
-        localStorage.setItem('rol', rol);
- */        alert('Usuario creado correctamente ')
+        localStorage.setItem('rol', rol); */
+        alert('Usuario creado correctamente ')
         navigate('/');
     } catch (error) {
         console.error(error)
-    }
-  }
+    } 
+} 
 
   return (
     <div className='formulary_section my-12'>
@@ -36,5 +36,4 @@ const Register = () => {
     </div>
   )
 }
-
 export default Register
