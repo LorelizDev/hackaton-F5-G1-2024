@@ -30,7 +30,7 @@ function Home() {
         Creemos en ser una armadura emocional, creando un refugio seguro donde cada persona se sienta escuchada, apoyada y protegida.
         <br/><br/>
         Juntos, cuidamos las alma vulnerables y construimos una comunidad más fuerte y solidaria.
-        <br/><br7/><br/>
+        <br/><br/>
         Explora nuestros distintos recursos gratuitos, o si estás en un momento de crisis puedes contactar directamente con alguno de nuestros ‘Saviours’ y/o recibir ayuda adicional y urgente. 
       </p>
   </div>

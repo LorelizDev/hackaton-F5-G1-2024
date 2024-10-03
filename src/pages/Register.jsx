@@ -1,6 +1,5 @@
 import React from 'react';
 import { registerUser } from '../services/userServices';
-import { useNavigate } from 'react-router-dom';
 import FormTemplate from '../components/FormTemplate';
 
 const Register = () => {
@@ -14,25 +13,15 @@ const Register = () => {
     { name: "age", type: "number", placeholder: "Edad", validation: { required: "Tu edad es requerida" } },
     { name: "password", type: "password", placeholder: "Contraseña", validation: { required: "Tu contraseña es requerida" } },
     { name: "confirmPassword", type: "password", placeholder: "Confirmar contraseña", validation: { required: "Debes confirmar tu contraseña" } },
+    { name: "survey", type: "radio", options: ["Sí", "No"], validation: { required: "Debes seleccionar una opción" } },
   ];
-
-  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
-      if (data.password !== data.confirmPassword) {
-        alert('Las contraseñas no coinciden');
-        return;
-      }
-
-      // Excluir `confirmPassword` antes de enviar los datos
-      const { confirmPassword, ...userData } = data;
-
-      const response = await registerUser(userData);
+      const response = await registerUser(data);
       console.log(response);
 
       alert('Usuario creado correctamente');
-      navigate('/login');
     } catch (error) {
       console.error(error);
       alert('Hubo un error al crear el usuario');
