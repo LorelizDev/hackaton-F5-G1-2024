@@ -6,10 +6,6 @@
 
 @layer base {
     body {
-      @apply font-mainFont;
+      @apply font-mainFont bg-light;
     }
-}
-
-body {
-  background-color: #E1E7EE;
 }
