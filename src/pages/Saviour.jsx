@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Savior() {
+function Saviour() {
     return (
         <div className='bg-light min-h-screen h-full'>
             <div className='px-4 py-8'>
@@ -21,4 +21,4 @@ function Savior() {
     )
 }
 
-export default Savior
+export default Saviour
