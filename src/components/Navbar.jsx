@@ -2,11 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import LogOutButton from "../components/LogOutButton";
 import { useUserContext } from '../context/UserContext';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import HelpButton from '../components/HelpButton'
-=======
 import HelpButton from './HelpButton';
->>>>>>> feature-resources
 
 const Navbar = () => {
   const { userAuth } = useUserContext();
