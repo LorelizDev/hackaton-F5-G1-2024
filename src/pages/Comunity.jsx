@@ -74,7 +74,7 @@ const Community = () => {
   return (
     <>
       <div className='font-light text-right mr-6'>
-        <Link to='' className='hover:underline'>Mi espacio</Link>
+        <Link to='/community/myspace' className='underline hover:font-semibold'>Mi espacio</Link>
       </div>
       <div className='flex items-center w-3/5 mx-auto my-6'>
         <SearchBar onSearch={handleSearch} />

@@ -5,6 +5,7 @@ import ErrorBoundary from "../components/ErrorBoundary";
 import Register from "../pages/Register";
 import Resources from "../pages/Resources";
 import Community from "../pages/Comunity";
+import MySpace from "../pages/MySpace";
 import Saviour from "../pages/Saviour";
 import Login from "../pages/Login";
 
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
       }, */
       {
         path: "/community",
-        element: <Community/>
+        element: <Community/>,
+      },
+      {
+        path: "/myspace",
+        element: <MySpace />,
       }
     ]
   }  
