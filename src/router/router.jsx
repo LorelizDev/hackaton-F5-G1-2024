@@ -10,6 +10,7 @@ import ChatBot from "../pages/ChatBot";
 import Saviour from "../pages/Saviour";
 import Courses from "../pages/Courses";
 import MySpace from "../pages/MySpace";
+import Community from "../pages/Community";
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses />,
+      },
+      {
+        path: "/community",
+        element: <Community />,
       }
     ]
   }  
