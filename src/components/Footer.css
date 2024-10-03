@@ -26,3 +26,52 @@
     gap: 5px;
 }
   
+/* Para móvil */
+@media (max-width: 480px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+    }
+  
+    .footer {
+      padding: 10px;
+      font-size: 10px;
+    }
+  
+    .social {
+      gap: 15px;
+    }
+  }
+  
+  /* Para tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .footer-content {
+      gap: 100px;
+    }
+  
+    .footer {
+      padding: 10px;
+      font-size: 11px;
+    }
+  
+    .social {
+      gap: 10px;
+    }
+  }
+  
+  /* Para escritorio*/
+  @media (min-width: 769px) {
+    .footer-content {
+      gap: 210px;
+    }
+  
+    .footer {
+      padding: 12px;
+      font-size: 12px;
+    }
+  
+    .social {
+      gap: 5px;
+    }
+  }
