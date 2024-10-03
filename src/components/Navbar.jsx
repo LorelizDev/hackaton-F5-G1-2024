@@ -82,16 +82,16 @@ const Navbar = () => {
         {open && (
           <div ref={menuRef} className="top-5 max-sm:w-screen max-sm:h-screen absolute right-0 mt-2 w-96 bg-light rounded-lg pr-4 ">
             <ul className="flex flex-col p-2">
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/saviours">Quiero ser Savior</Link></li>
-              <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/resources">Recursos</Link></li>
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/chat">ChatBot</Link></li>
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/saviours" onClick={toggleMenu}>Quiero ser Savior</Link></li>
+              <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/resources" onClick={toggleMenu}>Recursos</Link></li>
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/chat" onClick={toggleMenu}>ChatBot</Link></li>
 
               {userAuth && <LogOutButton />}
 
               {!userAuth && (
                 <>
-                  <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/login">Iniciar sesión</Link></li>
-                  <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/register">Registro</Link></li>
+                  <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/login" onClick={toggleMenu}>Iniciar sesión</Link></li>
+                  <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/register" onClick={toggleMenu}>Registro</Link></li>
                 </>
               )}
             </ul>
