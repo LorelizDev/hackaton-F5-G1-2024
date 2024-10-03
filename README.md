@@ -40,7 +40,6 @@ This will run the tests.
 
 <img width="600" alt="Captura de pantalla 2024-03-18 a las 20 22 39" src="./src/assets/images/resources/test.png">
 
-<img width=>
 
 # Technologies
 
