@@ -55,13 +55,14 @@ const Navbar = () => {
               {
                 !userAuth && <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/register">Registro</a></li>
               }
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/saviours">Quiero ser Savior</a></li>
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/community">Comunidad</a></li>
+              <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/chat">Chat</a></li>              
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/forum">Foro</a></li>
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/saviours">Quiero ser Saviour</a></li>
               <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><a href="/resources">Recursos</a></li>
               <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Talleres</li>
+              <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Comunidad</li>
               <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Noticias</li>
-              <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark">Contacto</li>
-              <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Chat</li>
+
               {userAuth && <LogOutButton />}
             </ul>
           </div>
