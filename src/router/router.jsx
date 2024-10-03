@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import Resources from "../pages/Resources";
 import Community from "../pages/Comunity";
 import HelpButton from "../components/HelpButton";
+import Navbar from "../components/Navbar";
 
 const router = createBrowserRouter([
   {
@@ -18,9 +19,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/help",
-        element: <HelpButton/>
+        path: "/nav",
+        element: <Navbar/>,
       },
+     
      /*  {
         path: "/login",
         element: <Login/>,
