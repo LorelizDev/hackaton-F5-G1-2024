@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUserContext } from '../context/UserContext.jsx';
 import { useForm } from 'react-hook-form';
 import { loginUser } from '../services/userServices.js';
@@ -37,21 +37,21 @@ const Login = () => {
 
   return (
     <div className='formulary_section my-12'>
-      <div className="m-auto w-4/5 bg-dark text-light p-4 rounded-lg sm:w-1/2">
-        <h2 className="text-center text-xl font-medium mb-4">Iniciar sesión</h2>
-        <form className="w-4/5 mx-auto my-4 bg-dark text-light flex flex-col gap-3" onSubmit={handleSubmit(handleLogin)}>
+      <div className="m-auto w-4/5 text-light p-4 rounded-lg sm:w-1/2">
+        <h1 className="text-4xl text-center font-semibold text-medium font-medium mb-10">Inicia sesión</h1>
+        <form className="w-[280px] mx-auto my-4 text-light flex flex-col gap-3 justify-center items-center" onSubmit={handleSubmit(handleLogin)}>
 
-          <input disabled={isLoading} {...register("email", { required: true })} type="email" id="email" placeholder="Email" required className="w-full border-2 border-contrast p-2 rounded-3xl bg-transparent text-sm" />
+          <input disabled={isLoading} {...register("username", { required: true })} type="username" id="username" placeholder="Nombre de usuario" required className="w-full border-2 border-dark px-2 py-1 rounded-3xl bg-transparent text-sm" />
 
-          <div className="relative">
-            <input disabled={isLoading} {...register("password", { required: true })} type={showPassword ? 'text' : 'password'} id="password" placeholder="Contraseña" required className="w-full border-2 border-contrast p-2 rounded-3xl bg-transparent text-sm" />
-            <button type="button" id="togglePassword" className="absolute text-sm right-0 m-[10px]" onClick={togglePasswordVisibility}>
+          <div className="relative w-full">
+            <input disabled={isLoading} {...register("password", { required: true })} type={showPassword ? 'text' : 'password'} id="password" placeholder="Contraseña" required className="w-full border-2 border-dark px-2 py-1 rounded-3xl bg-transparent text-sm" />
+            <button type="button" id="togglePassword" className="text-dark absolute text-sm right-0 my-[6px] mx-3" onClick={togglePasswordVisibility}>
               {showPassword ? 'Ocultar' : 'Mostrar'}
             </button>
           </div>
 
-          <button type="submit" className="w-full mt-4 bg-medium text-light font-bold p-2 rounded-3xl hover:bg-opacity-70">
-            Acceder
+          <button type="submit" className="w-1/2 mt-4 bg-contrast text-dark font-semibold p-2 rounded-3xl hover:bg-opacity-70">
+            Entrar
           </button>
           {isLoading &&
             <div role="status" className='flex flex-col place-items-center w-full'>
@@ -62,6 +62,11 @@ const Login = () => {
             </div>
           }
           {loginError && <p className='text-red-500 self-center'>Datos incorrectos</p>}
+          <div className='flex flex-col items-center mt-5'>
+            <Link to="" className='font-semibold text-sm text-dark'>¿Has olvidado tu contraseña?</Link>
+            <Link to="/register" className='text-base text-medium font-semibold'>Crear cuenta</Link>
+          </div>
+
         </form>
       </div>
     </div>
