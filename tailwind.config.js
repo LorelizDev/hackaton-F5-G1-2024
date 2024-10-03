@@ -8,7 +8,7 @@ export default {
     extend: {
       colors:{
         light: '#E1E7EE',
-        dark: '#375172',
+        dark: '#172A41',
         medium: '#6864AD',
         contrast: '#85D8C8'
       },
