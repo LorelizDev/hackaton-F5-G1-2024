@@ -5,10 +5,6 @@ import ErrorBoundary from "../components/ErrorBoundary";
 import Register from "../pages/Register";
 import Resources from "../pages/Resources";
 import Community from "../pages/Comunity";
-import MySpace from "../pages/MySpace";
-import Saviour from "../pages/Saviour";
-import Login from "../pages/Login";
-import Courses from "../pages/Courses";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +16,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/nav",
+        element: <Navbar/>,
+      },
+     
       {
         path: "/login",
         element: <Login/>,
