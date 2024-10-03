@@ -12,6 +12,7 @@ const Register = () => {
     { name: "profession", type: "text",  placeholder: "Profesión", validation: { required: "Tu profesión es requerida" } },
     { name: "gender", type: "text",  placeholder: "Género", validation: { required: "Tu género es requerido" } },
     { name: "password", type: "password",  placeholder: "Contraseña", validation: { required: "Tu contraseña es requerida" } },
+    { name: "Quieres responder a una breve encuesta?", type: "radio", options: ["Sí", "No"], validation: { required: "Debes seleccionar una opción" } },
   ];
 
   const navigate = useNavigate();
