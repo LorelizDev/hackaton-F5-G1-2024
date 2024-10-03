@@ -9,7 +9,7 @@ const Login = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
   const [loginError, setLoginError] = useState('');
   const navigate = useNavigate();
-  const { setUserAuth, setUser, setUserRole } = useUserContext();
+  const { setUserAuth } = useUserContext();
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -21,12 +21,8 @@ const Login = () => {
       setLoginError();
       const response = await loginUser(formData);
       if (response) {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('role', response.user_role)
         setUserAuth(true);
-        setUser(response.user_name);
-        setUserRole(response.user_role)
-        navigate('/dashboard');
+        navigate('/');
       }
 
     } catch (error) {
