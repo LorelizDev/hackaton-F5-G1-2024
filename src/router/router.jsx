@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import Resources from "../pages/Resources";
 import Community from "../pages/Comunity";
 import Saviour from "../pages/Saviour";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +18,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-    /*  {
+      {
         path: "/login",
         element: <Login/>,
-      }, */
+      },
       {
         path: "/register",
         element: <Register/>,

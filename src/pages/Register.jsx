@@ -1,6 +1,6 @@
 import React from 'react'
-/* import { registerUser } from '../../../services/authService'
- */import { useNavigate } from 'react-router-dom'
+import { registerUser } from '../services/userServices'
+import { useNavigate } from 'react-router-dom'
 import FormTemplate from '../components/FormTemplate';
 
 const Register = () => {
@@ -12,23 +12,24 @@ const Register = () => {
     { name: "profession", type: "text",  placeholder: "Profesión", validation: { required: "Tu profesión es requerida" } },
     { name: "gender", type: "text",  placeholder: "Género", validation: { required: "Tu género es requerido" } },
     { name: "password", type: "password",  placeholder: "Contraseña", validation: { required: "Tu contraseña es requerida" } },
+    { name: "Quieres responder a una breve encuesta?", type: "radio", options: ["Sí", "No"], validation: { required: "Debes seleccionar una opción" } },
   ];
 
   const navigate = useNavigate();
   
-  const onSubmit = async () =>{
+  const onSubmit = async (data) =>{
     try {
-/*         const response = await registerUser(data);
+          const response = await  registerUser(data);
         console.log(response)
-        const {token, rol} = response.sesiondata;
+       /* const {token, rol} = response.sesiondata;
         localStorage.setItem('token', token);
-        localStorage.setItem('rol', rol);
- */        alert('Usuario creado correctamente ')
-        navigate('/');
+        localStorage.setItem('rol', rol); */
+        alert('Usuario creado correctamente ')
+        navigate('/login');
     } catch (error) {
         console.error(error)
-    }
-  }
+    } 
+} 
 
   return (
     <div className='formulary_section my-12'>
@@ -36,5 +37,4 @@ const Register = () => {
     </div>
   )
 }
-
 export default Register
