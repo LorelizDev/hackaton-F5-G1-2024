@@ -13,8 +13,8 @@ function Home() {
 
     {/*div 1 */}
   <div className="flex max-sm:ml-6">
-      <p className="max-sm:text-5xl max-sm:font-mainFont max-sm:font-black max-sm:text-dark max-sm:mt-10">
-        ¿Necesitas<br/> hablar?
+      <p className="lg:text-5xl lg:font-mainFont lg:font-bold lg:text-dark lg:mt-20 max-sm:text-pretty max-sm:text-5xl max-sm:font-mainFont max-sm:font-black max-sm:text-dark max-sm:mt-10">
+        ¿Necesitas hablar?
       </p>
   </div>
 
