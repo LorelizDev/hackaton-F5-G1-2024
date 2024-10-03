@@ -59,7 +59,7 @@ const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} 
 						{errors[name] && <span className="text-red-500 text-center">{errors[name].message}</span>}
 					</div>
 				))}
-
+					<p className="  text-light font-bold p-2 rounded-3xl hover:bg-opacity-70">¿Ya tienes cuenta? <a href="./login">Inicia sesión</a> </p>
 				<button type="submit" className="w-full mt-4 bg-medium text-light font-bold p-2 rounded-3xl hover:bg-opacity-70">
 					{submitText}
 				</button>
