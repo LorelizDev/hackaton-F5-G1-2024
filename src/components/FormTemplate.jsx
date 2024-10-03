@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} }) => {
 	const { register, handleSubmit, formState: { errors }, reset } = useForm({
@@ -15,9 +16,9 @@ const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} 
 			<h2 className="text-center text-xl font-medium mb-4">{title}</h2>
 			<form
 				onSubmit={handleSubmit(handleFormSubmit)}
-				className="w-4/5 mx-auto my-4 bg-dark text-light">
+				className="flex flex-col items-center w-4/5 mx-auto my-4 bg-dark text-light">
 				{fields.map(({ name, type, placeholder, validation }, index) => (
-					<div key={index} className="mb-3">
+					<div key={index} className="mb-3 w-full">
 						{type === "radio" ? (
 							<>
 								<p className="mb-2 text-center">{name}</p>
@@ -63,6 +64,7 @@ const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} 
 				<button type="submit" className="w-full mt-4 bg-medium text-light font-bold p-2 rounded-3xl hover:bg-opacity-70">
 					{submitText}
 				</button>
+				<Link to="/login" className="mt-5 text-sm hover:font-semibold">¿Ya tienes una cuenta? Inicia sesión</Link>
 			</form>
 		</div>
 	);
