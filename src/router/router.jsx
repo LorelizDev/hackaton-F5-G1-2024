@@ -35,11 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/saviours",
         element: <Saviour/>,
-      },/*
-      {
-        path: "/contact",
-        element: <Contact/>
-      }, */
+      },
       {
         path: "/community",
         element: <Community/>,
