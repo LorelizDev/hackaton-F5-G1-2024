@@ -29,6 +29,18 @@
       "gender": "Hombre",
       "email": "marcos.lopez@correo.com",
       "password": "5b8b3b47e8b7f7a3d93e7b4c55b4f8a3e9f6c3b77d89a2b3f76a99a5b7d12f9e"
+    },
+    {
+      "id": "1ea0",
+      "name": "g",
+      "lastname": "h",
+      "email": "h@g",
+      "phone": "h",
+      "profession": "h",
+      "gender": "h",
+      "password": "h",
+      "acceptTerms": "no",
+      "Quieres responder a una breve encuesta?": "sí"
     }
   ]
 }

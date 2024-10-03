@@ -18,14 +18,45 @@ const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} 
 				className="w-4/5 mx-auto my-4 bg-dark text-light">
 				{fields.map(({ name, type, placeholder, validation }, index) => (
 					<div key={index} className="mb-3">
-						<input
-							id={name}
-							type={type}
-							placeholder={placeholder}
-							{...register(name, validation)}
-							className="w-full border-2 border-contrast p-2 rounded-3xl bg-transparent text-sm"
-						/>
-						{errors[name] && <span className="text-red-500" >{errors[name].message}</span>}
+						{type === "radio" ? (
+							<>
+								<p className="mb-2 text-center">{name}</p>
+								<div className="flex justify-center w-full">
+									<div className="inline-flex items-center mr-4">
+										<input
+											id={`${name}-yes`}
+											type="radio"
+											{...register(name, validation)}
+											value="sí"
+											className="mr-2"
+										/>
+										<label htmlFor={`${name}-yes`} className="text-sm">Sí</label>
+									</div>
+									<div className="inline-flex items-center ml-4">
+										<input
+											id={`${name}-no`}
+											type="radio"
+											{...register(name, validation)}
+											value="no"
+											className="mr-2"
+										/>
+										<label htmlFor={`${name}-no`} className="text-sm">No</label>
+									</div>
+								</div>
+							</>
+						) : (
+							<>
+								<input
+									id={name}
+									type={type}
+									placeholder={placeholder}
+									{...register(name, validation)}
+									className="w-full border-2 border-contrast p-2 rounded-3xl bg-transparent text-sm"
+								/>
+							</>
+						)}
+						
+						{errors[name] && <span className="text-red-500 text-center">{errors[name].message}</span>}
 					</div>
 				))}
 
