@@ -1,6 +1,5 @@
 import React from 'react';
 import imgHome from '../assets/imgHome.jpg';
-import HelpButton from '../components/HelpButton';
 
 function Home() {
   return (
@@ -36,10 +35,6 @@ function Home() {
         </div>
       </div>
 
-      {/* Div 5 ( Button Component )*/}
-      <div className="flex max-sm:justify-center pb-6 max-sm:bg-light">
-        <HelpButton className="w-96" />
-      </div>
       {/* End of div container */}
     </>
   );
