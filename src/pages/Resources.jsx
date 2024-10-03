@@ -8,7 +8,7 @@ const Resources = () => {
   return (
     <>
     <div className="min-h-screen bg-E1E7EE flex items-center justify-center">
-        <div className="container mx-auto px-4 py-16 max-w-4xl text-center">
+        <div className="container mx-auto px-4 py-16 max-w-4xl text-left">
           <h1 className="text-black text-5xl font-bold mb-8">Recursos</h1>
           
           <div className="grid grid-cols-1 gap-8">
