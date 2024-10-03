@@ -11,6 +11,7 @@ import Saviour from "../pages/Saviour";
 import Courses from "../pages/Courses";
 import MySpace from "../pages/MySpace";
 import Community from "../pages/Community";
+import Survey from "../pages/Survey";
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/community",
         element: <Community />,
+      },
+      {
+        path: "/survey",
+        element: <Survey />,
       }
     ]
   }  
