@@ -7,7 +7,8 @@ const LayoutPublic = () => {
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
+      {userAuth && <LogOutButton />}
       <Outlet />
       <Footer />
     </>
