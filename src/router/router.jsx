@@ -46,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/myspace",
         element: <MySpace />,
+      },
+      {
+        path: "/courses",
+        element: <Courses />,
       }
     ]
   }  
