@@ -58,6 +58,7 @@ const Navbar = () => {
               }
               <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/saviours">Quiero ser Savior</Link></li>
               <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/community">Comunidad</Link></li>
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/chat">ChatBot</Link></li>
               <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/resources">Recursos</Link></li>
               <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Talleres</li>
               <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Comunidad</li>
