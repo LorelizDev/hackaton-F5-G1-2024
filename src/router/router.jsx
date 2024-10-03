@@ -8,6 +8,7 @@ import Community from "../pages/Comunity";
 import MySpace from "../pages/MySpace";
 import Saviour from "../pages/Saviour";
 import Login from "../pages/Login";
+import Courses from "../pages/Courses";
 
 const router = createBrowserRouter([
   {
