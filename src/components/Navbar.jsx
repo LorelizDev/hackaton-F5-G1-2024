@@ -24,7 +24,7 @@ const Navbar = () => {
 
     return (
         <>
-<div className="flex max-sm:justify-end relative">
+<div className="flex max-sm:justify-end relative z-10">
     <button onClick={toggleMenu} className="flex max-sm:p-2 max-sm:text-dark max-sm:focus:outline-none">
         <svg
             className="max-sm:w-6 max-sm:h-6"
