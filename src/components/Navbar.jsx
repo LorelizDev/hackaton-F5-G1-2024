@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import LogOutButton from "../components/LogOutButton";
 import { useUserContext } from '../context/UserContext';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { userAuth } = useUserContext();
@@ -50,14 +51,14 @@ const Navbar = () => {
 
             <ul className="flex flex-col p-2">
               {
-                !userAuth && <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><a href="/login">Iniciar sesión</a></li>
+                !userAuth && <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/login">Iniciar sesión</Link></li>
               }
               {
-                !userAuth && <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/register">Registro</a></li>
+                !userAuth && <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/register">Registro</Link></li>
               }
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/saviours">Quiero ser Savior</a></li>
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><a href="/community">Comunidad</a></li>
-              <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><a href="/resources">Recursos</a></li>
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/saviours">Quiero ser Savior</Link></li>
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/community">Comunidad</Link></li>
+              <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/resources">Recursos</Link></li>
               <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Talleres</li>
               <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl">Noticias</li>
               <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark">Contacto</li>
