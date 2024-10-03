@@ -63,8 +63,8 @@ const Login = () => {
           }
           {loginError && <p className='text-red-500 self-center'>Datos incorrectos</p>}
           <div className='flex flex-col items-center mt-5'>
-            <Link to="" className='font-semibold text-sm text-dark'>¿Has olvidado tu contraseña?</Link>
-            <Link to="/register" className='text-base text-medium font-semibold'>Crear cuenta</Link>
+            <Link to="" className='hover:font-semibold font-medium text-sm text-dark'>¿Has olvidado tu contraseña?</Link>
+            <Link to="/register" className='hover:font-semibold font-medium text-base text-medium'>Crear cuenta</Link>
           </div>
 
         </form>
