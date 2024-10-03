@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { GoPencil } from "react-icons/go";
 import CardPost from '../components/CardPost'
 import SearchBar from '../components/SearchBar'
@@ -72,6 +73,9 @@ const Forum = () => {
 
   return (
     <>
+      <div className='font-light text-right mr-6'>
+        <Link to='/myspace' className='hover:underline'>Mi espacio</Link>
+      </div>
       <div className='flex items-center w-3/5 mx-auto my-6'>
         <SearchBar onSearch={handleSearch} />
         <button className='bg-medium rounded-full w-8 h-8 ml-2'>
