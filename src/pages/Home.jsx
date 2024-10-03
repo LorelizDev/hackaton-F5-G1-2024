@@ -1,7 +1,5 @@
 import React from 'react'
 import imgHome from '../assets/imgHome.jpg'
-import HelpButton from '../components/HelpButton'
-
 
 function Home() {
   return (
@@ -38,11 +36,6 @@ function Home() {
     {/* div 4 */}
   <div className="flex lg:mr-20 lg:justify-end lg:-mt-96 max-sm:bg-light max-sm:justify-center ">
       <img className="lg:w-[540px] lg:h-96 lg:rounded-3xl  max-sm:w-96 max-sm:ml-6 max-sm:mr-6 max-sm:h-64 max-sm:rounded-3xl  max-sm:mt-6" src={imgHome} alt="" />
-  </div>
-
-    {/* div 5 ( Button Component )*/}
-  <div className="flex max-sm:justify-center max-sm:bg-light">
-      <HelpButton className="w-96" />
   </div>
   
 </div>
