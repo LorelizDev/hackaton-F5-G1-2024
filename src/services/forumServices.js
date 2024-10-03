@@ -1,81 +1,49 @@
 import axios from "axios";
+const url = 'http://localhost:3000/community';
 
-export const url = '';
-
-
-/* function getToken(){
-  let token = localStorage.getItem('token');
-  const headers ={
-    'Authorization': `Bearer ${token}`
-  };
-  return headers
-} */
 //GET
- 
-export const getMessages = async () => {
+export const getData = async () => {
   try {
-    /* const headers = getToken() */
-    const response = await axios.get(url/* , {headers} */);
-    return response.data
+    const response = await axios.get(`${url}`);
+    return response.data;
   } catch (error) {
-    console.error('error get news', error.message);
+    console.error('Error al obtener los mensajes:', error);
     throw error;
   }
 };
 
 //POST
-
-export const postMessage= async (data/* , token */) => {
- 
+export const postData = async (data) => {
   try {
-    /* const headers = getToken() */
-     const response = await axios.post(url, data/* , {headers} */);
-     alert("Message created successfully");
-     return response;
+    const response = await axios.post(`${url}`, data);
+    alert("Mensaje creado exitosamente");
+    return response.data;
   } catch (error) {
-     console.error('Error creating new:', error.message);
-     throw error; }
- };
-
-//DELETE
-
-export const deleteMessage = async (id_message) =>{
-  try {
-    /* const headers = getToken() */
-    let urlId = `${url}/${id_message}`;
-    const response = await axios.delete(urlId/* , {headers} */);
-    alert("Message deleted successfully");
-    return response;
-  } catch (error) {
-    console.error('error delete new', error.message);
+    console.error('Error al crear el mensaje:', error);
     throw error;
   }
+};
 
+//DELETE
+export const deleteData = async (id) => {
+  try {
+    if (confirm("¿Estás seguro que quieres eliminar este mensaje?") === true) {
+      await axios.delete(`${url}/${id}`);
+      return { message: 'Mensaje eliminado con éxito' };
+    }
+  } catch (error) {
+    console.error('Error al eliminar el mensaje:', error);
+    throw error;
+  }
 };
 
 //UPDATE
-
-export const updateMessage = async (data, id_message) => {
+export const updateData = async (id, newData) => {
   try {
-    /* const headers = getToken() */
-    let urlId = 	`${url}/${id_message}`;
-    const response = await axios.put(urlId, data/* , {headers} */);
-    alert('Message updated');
-    return response;
+    const response = await axios.put(`${url}/${id}`, newData);
+    return response.data;
   } catch (error) {
-    console.error('error update message', error.message);
-    throw error;
-  }
-}
-//Get by id
-
-export const getMessageById = async (id) => {
-  try {
-    /* const headers = getToken() */
-    const response = await axios.get(`${url}/${id}`/* , {headers} */);
-    return response;
-  } catch (error) {
-    console.error('Error get new', error.message);
+    console.error('Error al actualizar el mensaje:', error);
     throw error;
   }
 };
