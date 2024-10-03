@@ -4,8 +4,9 @@ import LayoutPublic from "../layout/LayoutPublic";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Register from "../pages/Register";
 import Resources from "../pages/Resources";
-import Community from "../pages/Comunity";
+import Forum from "../pages/Forum";
 import Login from "../pages/Login";
+import ChatBot from "../pages/ChatBot";
 import Saviour from "../pages/Saviour";
 import Courses from "../pages/Courses";
 import MySpace from "../pages/MySpace";
@@ -38,8 +39,12 @@ const router = createBrowserRouter([
         element: <Saviour/>,
       },
       {
-        path: "/community",
-        element: <Community/>,
+        path: "/chat",
+        element: <ChatBot/>,
+      },
+      {
+        path: "/forum",
+        element: <Forum/>,
       },
       {
         path: "/myspace",

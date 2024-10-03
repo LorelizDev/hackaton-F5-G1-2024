@@ -4,7 +4,7 @@ import { GoPencil } from "react-icons/go";
 import CardPost from '../components/CardPost'
 import SearchBar from '../components/SearchBar'
 
-const Community = () => {
+const Forum = () => {
   const data = [
     {
       id: 1,
@@ -103,4 +103,4 @@ const Community = () => {
   )
 }
 
-export default Community
+export default Forum
