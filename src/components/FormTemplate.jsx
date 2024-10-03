@@ -12,7 +12,7 @@ const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} 
 
 	return (
 		<div className="m-auto w-4/5 bg-dark text-light p-4 rounded-lg sm:w-1/2">
-            <h2 className="text-center text-xl font-medium mb-4">{title}</h2>
+			<h2 className="text-center text-xl font-medium mb-4">{title}</h2>
 			<form
 				onSubmit={handleSubmit(handleFormSubmit)}
 				className="w-4/5 mx-auto my-4 bg-dark text-light">
@@ -21,7 +21,7 @@ const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} 
 						<input
 							id={name}
 							type={type}
-                            placeholder={placeholder}
+							placeholder={placeholder}
 							{...register(name, validation)}
 							className="w-full border-2 border-contrast p-2 rounded-3xl bg-transparent text-sm"
 						/>
