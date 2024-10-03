@@ -1,56 +1,59 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import LogOutButton from "../components/LogOutButton";
 import { useUserContext } from '../context/UserContext';
 import { Link } from 'react-router-dom';
 import HelpButton from './HelpButton';
+import SoulSafe from '../assets/images/resources/soulsafeblanco.png';
 
 const Navbar = () => {
   const { userAuth } = useUserContext();
   const [open, setOpen] = useState(false);
-  const menuRef = useRef(null); // 
+  const [resourcesOpen, setResourcesOpen] = useState(false); // Estado para el desplegable
+  const menuRef = useRef(null); 
 
   const toggleMenu = () => {
     setOpen(!open);
   };
 
-  /*   useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target)) {
-          setOpen(false);
-        }
-      };
-  
-      document.addEventListener('mousedown', handleClickOutside);
-  
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [menuRef]); */
+  const toggleResources = () => {
+    setResourcesOpen(!resourcesOpen);
+  };
 
   return (
     <>
       <div className="hidden lg:flex justify-between items-center bg-[#6864AD] text-white p-4">
         <div className="flex items-center space-x-4">
-          <Link to="/" className="text-xl font-bold">SafeSoul</Link> 
-        </div>
-        <div className="flex items-center space-x-4">
-          <HelpButton className="w-12" />  
+          <HelpButton className="w-12 pl-4" />  
+          {/* Mover el logo aquí y hacer que redirija al home */}
+          <Link to="/">
+            <img src={SoulSafe} alt="Logo SoulSafe" className="h-8" />
+          </Link>
         </div>
 
-        
         <div className="flex space-x-6">
           <Link to="/saviours" className="hover:underline">Quiero ser Savior</Link>
-          <Link to="/forum" className="hover:underline">Comunidad</Link>
+          
+          {/* Enlace de recursos que despliega los sub-enlaces */}
+          <div className="relative">
+            <button onClick={toggleResources} className="hover:underline text-contrast">
+              Recursos
+            </button>
+            {resourcesOpen && (
+              <div className="absolute bg-white text-black rounded shadow-md mt-2 z-10">
+                <Link to="/forum" className="block px-4 py-2 hover:bg-gray-200">Comunidad</Link>
+                <Link to="/courses" className="block px-4 py-2 hover:bg-gray-200">Talleres</Link>
+                <Link to="/news" className="block px-4 py-2 hover:bg-gray-200">Noticias</Link>
+              </div>
+            )}
+          </div>
+
           <Link to="/chat" className="hover:underline">ChatBot</Link>
-          <Link to="/resources" className="hover:underline">Recursos</Link>
-          <Link to="/courses" className="hover:underline">Talleres</Link>
-          <Link to="" className="hover:underline">Noticias</Link>
-          
+
           {userAuth && <LogOutButton />}
-          
+
           {!userAuth && (
             <>
-              <Link to="/login" className="hover:underline">Iniciar sesión</Link>
+              <Link to="/login" className="hover:underline text-contrast">Iniciar sesión</Link>
               <Link to="/register" className="hover:underline">Registro</Link>
             </>
           )}
@@ -77,14 +80,11 @@ const Navbar = () => {
         </button>
 
         {open && (
-          <div ref={menuRef} className="top-5 max-sm:w-screen max-sm:h-screen absolute right-0 mt-2 w-96 bg-light rounded-lg ">
+          <div ref={menuRef} className="top-5 max-sm:w-screen max-sm:h-screen absolute right-0 mt-2 w-96 bg-light rounded-lg pr-4 ">
             <ul className="flex flex-col p-2">
               <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/saviours">Quiero ser Savior</Link></li>
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/forum">Comunidad</Link></li>
-              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/chat">ChatBot</Link></li>
               <li className="py-2 px-4 hover:bg-gray-200 font-mainFont font-black text-3xl text-dark"><Link to="/resources">Recursos</Link></li>
-              <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/workshops">Talleres</Link></li>
-              <li className=" px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/news">Noticias</Link></li>
+              <li className="px-4 hover:bg-gray-200 font-mainFont font-bold text-medium text-2xl"><Link to="/chat">ChatBot</Link></li>
 
               {userAuth && <LogOutButton />}
 
@@ -95,10 +95,12 @@ const Navbar = () => {
                 </>
               )}
             </ul>
+            <div className="flex justify-center py-2">
+              <button><img src={SoulSafe} alt="Logo SoulSafe" className="h-8" /></button> {/* Logo no visible en menú hamburguesa */}
+            </div>
           </div>
-        )
-        }
-      </div >
+        )}
+      </div>
     </>
   );
 };
