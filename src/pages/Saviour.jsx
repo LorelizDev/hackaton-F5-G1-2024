@@ -1,10 +1,8 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
 
 function Savior() {
     return (
         <div className='bg-light min-h-screen h-full'>
-            <NavBar/>
             <div className='px-4 py-8'>
                 <h1 className='font-mainFont font-extrabold text-4xl sm:text-3xl text-dark '>¿Quieres ayudar?</h1>
                 <h3 className='font-mainFont font-semibold text-3xl sm:text-2xl text-medium mt-2'>Conviértete en un Savior/consejero</h3>
