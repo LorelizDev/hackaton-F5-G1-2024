@@ -14,7 +14,7 @@ const Footer = () => {
 
     <a href="tel:+34647000933">+34 647000933</a>
    <div className="social"> 
-    <a href="https://www.linkedin.com/"> 
+    <a href="https://www.linkedin.com"> 
       <img src={Linkedin} alt="icon-linkedin" className="h-6" />
     </a>
     <a href="https://www.instagram.com/">

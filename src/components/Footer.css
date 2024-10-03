@@ -30,17 +30,18 @@
 @media (max-width: 480px) {
     .footer-content {
       flex-direction: column;
-      gap: 20px;
+      gap: 5px;
       justify-content: center;
     }
   
     .footer {
       padding: 10px;
       font-size: 10px;
+      line-height: 1.2;
     }
   
     .social {
-      gap: 15px;
+      gap: 5px;
     }
   }
   
