@@ -5,8 +5,10 @@ import ErrorBoundary from "../components/ErrorBoundary";
 import Register from "../pages/Register";
 import Resources from "../pages/Resources";
 import Community from "../pages/Comunity";
-import HelpButton from "../components/HelpButton";
-import Navbar from "../components/Navbar";
+import Login from "../pages/Login";
+import Saviour from "../pages/Saviour";
+import Courses from "../pages/Courses";
+import MySpace from "../pages/MySpace";
 
 const router = createBrowserRouter([
   {
@@ -19,14 +21,9 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/nav",
-        element: <Navbar/>,
-      },
-     
-     /*  {
         path: "/login",
         element: <Login/>,
-      }, */
+      },
       {
         path: "/register",
         element: <Register/>,
@@ -35,17 +32,21 @@ const router = createBrowserRouter([
         path: "/resources",
         element: <Resources/>,
       },
-      /* {
+      {
         path: "/saviours",
         element: <Saviour/>,
       },
       {
-        path: "/contact",
-        element: <Contact/>
-      }, */
-      {
         path: "/community",
-        element: <Community/>
+        element: <Community/>,
+      },
+      {
+        path: "/myspace",
+        element: <MySpace />,
+      },
+      {
+        path: "/courses",
+        element: <Courses />,
       }
     ]
   }  
