@@ -2,6 +2,7 @@
   "usuarios": [
     {
       "id": "1",
+      "username": "carlitos",
       "name": "Carlos",
       "lastname": "González",
       "phone": "+34123456789",
@@ -12,6 +13,7 @@
     },
     {
       "id": "2",
+      "username": "lucy",
       "name": "Lucía",
       "lastname": "Fernández",
       "phone": "+34987654321",
@@ -23,6 +25,7 @@
     {
       "id": "3",
       "name": "Marcos",
+      "username": "marcosl",
       "lastname": "López",
       "phone": "+34123409876",
       "profession": "Consultor de Negocios",
