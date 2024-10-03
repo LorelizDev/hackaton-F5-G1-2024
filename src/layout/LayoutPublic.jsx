@@ -1,14 +1,13 @@
 import { Outlet } from "react-router-dom";
-import LogOutButton from "../components/LogOutButton";
 import { useUserContext } from '../context/UserContext';
 import Footer from '../components/Footer.jsx'
-
+import Navbar from "../components/NavBar";
 
 const LayoutPublic = () => {
-  const { userAuth } = useUserContext();
+
   return (
     <>
-      {userAuth && <LogOutButton />}
+      <Navbar/>
       <Outlet />
       <Footer />
     </>
