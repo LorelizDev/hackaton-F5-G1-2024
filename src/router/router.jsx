@@ -5,6 +5,7 @@ import ErrorBoundary from "../components/ErrorBoundary";
 import Register from "../pages/Register";
 import Resources from "../pages/Resources";
 import Community from "../pages/Comunity";
+import HelpButton from "../components/HelpButton";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/help",
+        element: <HelpButton/>
       },
      /*  {
         path: "/login",
