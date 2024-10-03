@@ -7,6 +7,7 @@ import Resources from "../pages/Resources";
 import Community from "../pages/Comunity";
 import Saviour from "../pages/Saviour";
 import Login from "../pages/Login";
+import ChatBot from "../pages/ChatBot";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/saviours",
         element: <Saviour/>,
+      },
+      {
+        path: "/chatbot",
+        element: <ChatBot/>,
       },/*
       {
         path: "/contact",
