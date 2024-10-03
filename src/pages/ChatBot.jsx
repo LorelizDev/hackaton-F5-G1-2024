@@ -7,7 +7,6 @@ function App() {
     return (
         <div className="App">
         <header className="App-header">
-            <h1 className="text-2xl font-bold mb-4">Navbar</h1>
             <Chatbot />
         </header>
         </div>
