@@ -3,11 +3,12 @@ import LogOutButton from "../components/LogOutButton";
 import { useUserContext } from '../context/UserContext';
 import Navbar from "../components/NavBar";
 
+
 const LayoutPublic = () => {
   const { userAuth } = useUserContext();
   return (
     <>
-      <Navbar />
+      <Navbar/>
       {userAuth && <LogOutButton />}
       <Outlet />
     </>
