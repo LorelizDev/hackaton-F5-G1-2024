@@ -9,7 +9,7 @@ const Login = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
   const [loginError, setLoginError] = useState('');
   const navigate = useNavigate();
-  const { setUserAuth, setUser, setUserRole } = useUserContext();
+  const { setUserAuth } = useUserContext();
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -21,12 +21,8 @@ const Login = () => {
       setLoginError();
       const response = await loginUser(formData);
       if (response) {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('role', response.user_role)
         setUserAuth(true);
-        setUser(response.user_name);
-        setUserRole(response.user_role)
-        navigate('/dashboard');
+        navigate('/');
       }
 
     } catch (error) {
@@ -38,7 +34,7 @@ const Login = () => {
   return (
     <div className='formulary_section my-12'>
       <div className="m-auto w-4/5 text-light p-4 rounded-lg sm:w-1/2">
-        <h1 className="text-4xl text-center font-semibold text-medium font-medium mb-10">Inicia sesión</h1>
+        <h1 className="text-4xl text-center font-semibold text-medium mb-10">Inicia sesión</h1>
         <form className="w-[280px] mx-auto my-4 text-light flex flex-col gap-3 justify-center items-center" onSubmit={handleSubmit(handleLogin)}>
 
           <input disabled={isLoading} {...register("username", { required: true })} type="username" id="username" placeholder="Nombre de usuario" required className="w-full border-2 border-dark px-2 py-1 rounded-3xl bg-transparent text-sm" />
@@ -63,8 +59,8 @@ const Login = () => {
           }
           {loginError && <p className='text-red-500 self-center'>Datos incorrectos</p>}
           <div className='flex flex-col items-center mt-5'>
-            <Link to="" className='font-semibold text-sm text-dark'>¿Has olvidado tu contraseña?</Link>
-            <Link to="/register" className='text-base text-medium font-semibold'>Crear cuenta</Link>
+            <Link to="" className='hover:font-semibold font-medium text-sm text-dark'>¿Has olvidado tu contraseña?</Link>
+            <Link to="/register" className='hover:font-semibold font-medium text-base text-medium'>Crear cuenta</Link>
           </div>
 
         </form>

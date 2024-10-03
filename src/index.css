@@ -9,3 +9,7 @@
       @apply font-mainFont;
     }
 }
+
+body {
+  background-color: #E1E7EE;
+}
