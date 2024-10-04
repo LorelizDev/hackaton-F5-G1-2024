@@ -16,19 +16,16 @@ const Login = () => {
   };
 
   const handleLogin = async (formData) => {
-    // Imprimir los datos del formulario para verificar que se reciban correctamente
-    console.log('Datos del formulario:', formData); 
 
     // Construir el objeto data con los campos username y password
     const data = {
-        username: formData.username, // Asegúrate de que este campo exista
-        password: formData.password, // Asegúrate de que este campo exista
+        email: formData.email, 
+        password: formData.password,
     };
     try {
-      setIsLoading(true); // Muestra el loader
-        setLoginError(''); // Limpia errores anteriores
+      setIsLoading(true); 
+        setLoginError(''); 
 
-        // Hacer la llamada a la función loginUser con el objeto data
         const response = await loginUser(data);
         
         if (response) {
@@ -39,9 +36,9 @@ const Login = () => {
       }
 
     } catch (error) {
-      console.error('Error en inicio de sesión:', error.response?.data?.error || error.message); // Muestra el error en la consola
-      setLoginError(error.response?.data?.error || 'Error desconocido'); // Maneja el error adecuadamente
-      setIsLoading(false); // Detiene el loader
+      console.error('Error en inicio de sesión:', error.response?.data?.error || error.message);
+      setLoginError(error.response?.data?.error || 'Error desconocido');
+      setIsLoading(false); 
     }
   };
 
@@ -51,7 +48,7 @@ const Login = () => {
         <h1 className="text-4xl text-center font-semibold text-medium mb-10">Inicia sesión</h1>
         <form className="w-[280px] mx-auto my-4 text-light flex flex-col gap-3 justify-center items-center" onSubmit={handleSubmit(handleLogin)}>
 
-          <input disabled={isLoading} {...register("username", { required: true })} type="username" id="username" placeholder="Nombre de usuario" required className="w-full border-2 border-dark px-2 py-1 rounded-3xl bg-transparent text-sm" />
+          <input disabled={isLoading} {...register("email", { required: true, pattern: /^\S+@\S+$/i})}  type="email" id="email" placeholder="Correo electrónico" required className="w-full border-2 border-dark px-2 py-1 rounded-3xl bg-transparent text-sm" />
 
           <div className="relative w-full">
             <input disabled={isLoading} {...register("password", { required: true })} type={showPassword ? 'text' : 'password'} id="password" placeholder="Contraseña" required className="w-full border-2 border-dark px-2 py-1 rounded-3xl bg-transparent text-sm" />
