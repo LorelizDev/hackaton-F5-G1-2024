@@ -21,7 +21,7 @@ const FormTemplate = ({ title, fields, onSubmit, submitText, initialValues = {} 
 		console.log(userData);
 		await onSubmit(userData); // Lógica que se pasa desde el componente padre
 		if (survey === "sí") {
-			navigate("/");
+			navigate("/survey");
 		  } else {
 			navigate("/login");
 		  }
