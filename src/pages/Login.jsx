@@ -33,9 +33,9 @@ const Login = () => {
 
   return (
     <div className='formulary_section my-12'>
-      <div className="m-auto w-4/5 text-light p-4 rounded-lg sm:w-1/2">
+      <div className="m-auto w-4/5 text-dark p-4 rounded-lg sm:w-1/2">
         <h1 className="text-4xl text-center font-semibold text-medium mb-10">Inicia sesión</h1>
-        <form className="w-[280px] mx-auto my-4 text-light flex flex-col gap-3 justify-center items-center" onSubmit={handleSubmit(handleLogin)}>
+        <form className="w-[280px] mx-auto my-4 text-dark flex flex-col gap-3 justify-center items-center" onSubmit={handleSubmit(handleLogin)}>
 
           <input disabled={isLoading} {...register("username", { required: true })} type="username" id="username" placeholder="Nombre de usuario" required className="w-full border-2 border-dark px-2 py-1 rounded-3xl bg-transparent text-sm" />
 
