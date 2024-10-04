@@ -16,18 +16,32 @@ const Login = () => {
   };
 
   const handleLogin = async (formData) => {
+    // Imprimir los datos del formulario para verificar que se reciban correctamente
+    console.log('Datos del formulario:', formData); 
+
+    // Construir el objeto data con los campos username y password
+    const data = {
+        username: formData.username, // Asegúrate de que este campo exista
+        password: formData.password, // Asegúrate de que este campo exista
+    };
     try {
-      setIsLoading(true);
-      setLoginError();
-      const response = await loginUser(formData);
-      if (response) {
-        setUserAuth(true);
-        navigate('/');
+      setIsLoading(true); // Muestra el loader
+        setLoginError(''); // Limpia errores anteriores
+
+        // Hacer la llamada a la función loginUser con el objeto data
+        const response = await loginUser(data);
+        
+        if (response) {
+            // Guarda el token en localStorage
+            localStorage.setItem('token', response.access_token);
+            setUserAuth(true);
+            navigate('/');
       }
 
     } catch (error) {
-      setLoginError(error.response.data.error);
-      setIsLoading(false);
+      console.error('Error en inicio de sesión:', error.response?.data?.error || error.message); // Muestra el error en la consola
+      setLoginError(error.response?.data?.error || 'Error desconocido'); // Maneja el error adecuadamente
+      setIsLoading(false); // Detiene el loader
     }
   };
 
